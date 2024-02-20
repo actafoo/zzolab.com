@@ -6,3 +6,9 @@ services:
       context: ./backend
     ports:
       - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "5173:5173"
