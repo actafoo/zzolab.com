@@ -1,0 +1,52 @@
+.terminal-window {
+    text-align: left;
+    height: 22.5rem;
+    border-radius: .625rem;
+}
+
+.terminal-window header {
+    background: #141414;
+    height: 1.875rem;
+    border-radius: .5rem .5rem 0 0;
+    padding-left: .625rem;
+}
+
+.terminal-window header .terminal-button {
+    width: .75rem;
+    height: .75rem;
+    margin: .625rem .25rem 0 0;
+    display: inline-block;
+    border-radius: .5rem;
+}
+
+.terminal-window header .terminal-button-green {
+    background: #00ca4e;
+}
+
+.terminal-window header .terminal-button-yellow {
+    background: #ffbd44;
+}
+
+.terminal-window header .terminal-button-red {
+    background: #ff605c;
+}
+
+.terminal-window section.terminal {
+    color: white;
+    font-family: "Roboto Mono", Menlo, Monaco, "Consolas", "Courier New", "Courier";
+    font-size: 11pt;
+    background: #141414;
+    padding: .625rem;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: 1.875rem;
+    bottom: 0;
+    overflow: auto;
+    border-radius: 0 0 .5rem .5rem;
+
+}
+
+.terminal-data {
+    display: none;
+}
