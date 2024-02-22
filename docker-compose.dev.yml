@@ -1,14 +1,53 @@
 version: "3.9"
 
 services:
+  db:
+    container_name: zzolab_db
+    image: mysql
+    restart: always
+    env_file: ./backend/.env     
+    ports:
+      - "3306:3306"
+    volumes:
+      - zzolab_db_data:/var/lib/mysql
+    networks:
+      - zzolab_network
+
   backend:
-    build:
-      context: ./backend
+    container_name: zzolab_back
+    restart: always
+    build: ./backend
+    command: /scripts/dev_start.sh
+    volumes:
+      - ./backend:/app
     ports:
       - "8000:8000"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - db
+    env_file: ./backend/.env
+    networks:
+      - zzolab_network
 
   frontend:
-    build:
-      context: ./frontend
+    container_name: zzolab_front
+    build: ./frontend
+    volumes:
+      - ./frontend:/app/
+      - /app/node_modules
     ports:
       - "5173:5173"
+    depends_on:
+      - backend
+    env_file: ./frontend/.env
+    networks:
+      - zzolab_network
+
+networks:
+  zzolab_network:
+    driver: bridge
+
+volumes:
+  zzolab_db_data:
+    driver: local
