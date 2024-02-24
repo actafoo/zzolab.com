@@ -1,7 +1,7 @@
 <script setup>
 const tabs = [
   { name: '운영진 소개', href: '/' },
-  { name: '스터디 소개', href: '/' },
+  { name: '스터디 소개', href: '/study' },
   {
     name: '노션',
     href: 'https://surish.notion.site/e0f18c1af4f64ecab7f68463fa666726',
@@ -13,9 +13,9 @@ const tabs = [
 
 <template>
   <div class="flex h-16 mx-auto w-full px-4 sm:px-6 lg:px-8 bg-white shadow">
-    <div class="flex flex-shrink-0 items-center">
+    <a href="/" class="flex flex-shrink-0 items-center">
       <img class="h-8 w-auto" src="/img/ko_logo.png" />
-    </div>
+    </a>
 
     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
       <a
