@@ -2,8 +2,12 @@
 const tabs = [
   { name: '운영진 소개', href: '/' },
   { name: '스터디 소개', href: '/' },
+  {
+    name: '노션',
+    href: 'https://surish.notion.site/e0f18c1af4f64ecab7f68463fa666726',
+    isNewTab: true,
+  },
   { name: '블로그', href: 'https://medium.com/zzolab', isNewTab: true },
-  { name: '노션', href: '/', isNewTab: true },
 ]
 </script>
 
