@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full px-6 py-5 md:flex md:items-center md:justify-between lg:px-8 border-t border-gray-100"
+    class="w-full px-6 py-5 md:flex md:items-center md:justify-between lg:px-8 border-t border-gray-100 bg-white"
   >
     <div class="flex justify-center space-x-6 md:order-2">
       <a

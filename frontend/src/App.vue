@@ -8,7 +8,7 @@ import TheNavbar from '@/components/TheNavbar.vue'
     <nav>
       <TheNavbar />
     </nav>
-    <main class="dark:bg-gray-900 pt-16">
+    <main class="dark:bg-gray-900 py-16">
       <router-view />
     </main>
     <footer>

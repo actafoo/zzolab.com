@@ -4,5 +4,6 @@ export default {
     Django_API: `${DjangoBase}/api/`,
 
     /* Study */
-    studyList: 'study'
+    categoryList: 'study/category',
+    studyList: 'study/list'
 }
