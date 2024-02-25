@@ -36,20 +36,20 @@ onMounted(async () => {
     <div class="relative mx-auto max-w-7xl">
       <div class="text-center bg-white p-10">
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          쪼랩 스터디 소개
+          🏆 쪼랩 스터디 전당 🏆
         </h2>
-        <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+        <p class="mx-auto max-w-2xl text-xl text-gray-500 mt-6">
           2022년부터 시작된 쪼랩의 역대 스터디들을 소개합니다.
         </p>
       </div>
 
-      <div class="flex mt-10 items-center justify-center space-x-10">
+      <div class="flex flex-wrap items-center justify-center space-x-10">
         <span
           v-for="category in categories"
           :key="category.id"
           :class="[
             categoryClass[category.name],
-            'inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ring-gray-500/10',
+            'inline-flex items-center rounded-md px-2 py-1 text-sm font-medium ring-1 ring-inset ring-gray-500/10 mt-10',
           ]"
           >{{ category.name }}
         </span>
