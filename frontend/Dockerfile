@@ -6,7 +6,6 @@ WORKDIR /app
 
 # 의존성 파일 복사 및 설치
 COPY package*.json ./
-RUN npm install
 RUN npm install --silent
 
 # 프로젝트 파일 복사
