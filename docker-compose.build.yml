@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  backend:
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/zzolab:backend-${GITHUB_SHA}
+    build:
+      context: ./backend
+
+  nginx:
+    image: ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/zzolab:nginx-${GITHUB_SHA}
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
