@@ -31,21 +31,21 @@ jobs:
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/zzolab:nginx-${{ github.sha }}
 
 
-      - name: Deploy to Amazon Lightsail
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.REMOTE_IP }}
-          username: ${{ secrets.REMOTE_SSH_ID }}
-          key: ${{ secrets.REMOTE_SSH_KEY }}
-          script: |
-            cd zzolab
-            git pull
+      # - name: Deploy to Amazon Lightsail
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.REMOTE_IP }}
+      #     username: ${{ secrets.REMOTE_SSH_ID }}
+      #     key: ${{ secrets.REMOTE_SSH_KEY }}
+      #     script: |
+      #       cd zzolab
+      #       git pull
             
-            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws configure set default.region ${{ secrets.AWS_REGION }}
-            aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/zzolab
+      #       aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #       aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #       aws configure set default.region ${{ secrets.AWS_REGION }}
+      #       aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/zzolab
             
-            AWS_ACCOUNT_ID=${{ secrets.AWS_ACCOUNT_ID }} AWS_REGION=${{ secrets.AWS_REGION }} GITHUB_SHA=${{ github.sha }} docker-compose -f docker-compose.prod.yml up -d
+      #       AWS_ACCOUNT_ID=${{ secrets.AWS_ACCOUNT_ID }} AWS_REGION=${{ secrets.AWS_REGION }} GITHUB_SHA=${{ github.sha }} docker-compose -f docker-compose.prod.yml up -d
             
-            docker system prune -a -f
+      #       docker system prune -a -f
