@@ -17,7 +17,7 @@ const tabs = [
       <img class="h-8 w-auto" src="/img/ko_logo.png" />
     </a>
 
-    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+    <div class="mx-2 flex space-x-2 sm:ml-6 sm:space-x-8">
       <a
         v-for="tab in tabs"
         :key="tab.name"
