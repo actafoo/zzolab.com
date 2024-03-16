@@ -8,7 +8,7 @@ const studies = ref([])
 const statusClass = {
   모집중: 'bg-pink-50 text-pink-800',
   진행중: 'bg-green-50 text-green-800',
-  종료: 'bg-gray-200 text-gray-600',
+  종료: 'bg-gray-200 text-gray-700',
 }
 
 const categoryClass = {
@@ -56,12 +56,12 @@ onMounted(async () => {
       </div>
 
       <div
-        class="mx-auto mt-16 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3"
+        class="mx-auto mt-16 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
       >
         <div
           v-for="study in studies"
           :key="study.id"
-          class="flex flex-col overflow-hidden rounded-lg shadow-lg"
+          class="flex flex-col overflow-hidden rounded-lg shadow-lg bg-white"
         >
           <div class="flex flex-col space-y-6 justify-between bg-white p-6">
             <div class="flex justify-between">
@@ -86,14 +86,14 @@ onMounted(async () => {
               {{ study.title }}
             </p>
 
-            <div class="h-36 bg-gray-50 overflow-y-auto p-2">
+            <div class="h-24 bg-gray-50 overflow-y-auto px-2">
               <p class="mt-3 text-base text-gray-500">
                 {{ study.description }}
               </p>
             </div>
 
             <div class="p-2 flex flex-col space-y-3">
-              <span class="text-gray-900">{{ study.leader }} </span>
+              <span class="text-gray-800">{{ study.leader }} </span>
 
               <div class="flex space-x-1 text-sm text-gray-500 mt-2">
                 <time>
