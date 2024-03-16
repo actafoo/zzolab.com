@@ -16,7 +16,7 @@ FROM nginx:alpine as production-stage
 
 COPY nginx/prod.conf /etc/nginx/nginx.conf
 
-COPY --from=build-stage /app/dist /dist/
+COPY --from=build-stage /app/dist /var/www/zzolab/dist/
 
 EXPOSE 80
 
