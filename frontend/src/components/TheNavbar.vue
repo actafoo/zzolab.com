@@ -4,7 +4,7 @@ const tabs = [
   { name: '스터디 소개', href: '/study' },
   {
     name: '노션',
-    href: 'https://surish.notion.site/e0f18c1af4f64ecab7f68463fa666726',
+    href: 'https://zzolab.notion.site/728c5e3b6a9c4caea41e3ce3c09c1eb4',
     isNewTab: true,
   },
   { name: '블로그', href: 'https://medium.com/zzolab', isNewTab: true },
