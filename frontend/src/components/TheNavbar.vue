@@ -1,7 +1,7 @@
 <script setup>
 const tabs = [
-  { name: '운영진 소개', href: '/' },
-  { name: '스터디 소개', href: '/study' },
+  { name: '소개', href: '/' },
+  { name: '스터디', href: '/study' },
   {
     name: '노션',
     href: 'https://zzolab.notion.site/728c5e3b6a9c4caea41e3ce3c09c1eb4',
